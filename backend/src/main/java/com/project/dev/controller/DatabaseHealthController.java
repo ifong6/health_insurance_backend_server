@@ -1,34 +1,40 @@
-package com.project.dev.controller.healthCheck;
+package com.project.dev.controller;
 
 import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class DbController {
+public class DatabaseHealthController {
 
-    @GetMapping("/db-check")
-    public String testConnection() {
-        return "Endpoint reached!";  // No DB code yet
+    @Autowired
+    private JdbcTemplate jdbcTemplate;  // For MySQL checks
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
+
+    // MySQL check
+    @GetMapping("/health/db/mysql")
+    public String checkMySQLConnection() {
+        try {
+            jdbcTemplate.execute("SELECT 1");  // Simple validation query
+            return "✅ MySQL connection successful!";
+        } catch (Exception e) {
+            return "❌ MySQL connection failed: " + e.getMessage();
+        }
     }
 
-    @RestController
-    public static class ConnectionTestController {
-
-        @Autowired
-        private MongoTemplate mongoTemplate;  // Injected automatically
-
-        @GetMapping("/check")
-        public String checkConnection() {
-            try {
-                // Ping the database (lightweight operation)
-                mongoTemplate.getDb().runCommand(new Document("ping", 1));
-                return "✅ MongoDB connection successful!";
-            } catch (Exception e) {
-                return "❌ Connection failed: " + e.getMessage();
-            }
+    // MongoDB-specific check
+    @GetMapping("/health/db/mongo")
+    public String checkMongoConnection() {
+        try {
+            mongoTemplate.getDb().runCommand(new Document("ping", 1));
+            return "✅ MongoDB connection successful!";
+        } catch (Exception e) {
+            return "❌ MongoDB connection failed: " + e.getMessage();
         }
     }
 }
