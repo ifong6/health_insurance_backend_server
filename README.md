@@ -134,11 +134,17 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 
 ---
 
-### 1. Spring Boot 项目初始化
+<details>
+<summary><strong>1. Spring Boot 项目初始化</strong></summary>
+
 - [x] 使用 Spring Initializr 初始化项目结构  
 - [x] 配置 `spring-boot-starter-web`、`spring-boot-starter-data-jpa` 等基础依赖  
 
-### 2. 多类型数据源配置（结合 AWS 服务）
+</details>
+
+<details>
+<summary><strong>2. 多类型数据源配置（结合 AWS 服务）</strong></summary>
+
 - [ ] 配置多种数据源类型以支持复杂保险业务系统，包括关系型数据库、NoSQL、缓存、对象存储与消息队列  
   - **关系型数据库**：使用 Spring Data JPA 配置 AWS RDS（PostgreSQL / MySQL）  
   - **缓存数据库**：集成 AWS ElastiCache（Redis）进行热点数据缓存和缓存穿透防护  
@@ -149,34 +155,64 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 - [ ] 建立模块化的 Repository 层结构，支持多源数据并发调用与统一封装  
 - [ ] 实现核心接口的集成测试，使用 JUnit + Mockito + Testcontainers 进行端到端验证  
 
-### 3. 用户认证与授权
+</details>
+
+<details>
+<summary><strong>3. 用户认证与授权</strong></summary>
+
 - [ ] 使用 Spring Security 实现注册 / 登录 API  
 - [ ] 集成 `auth0/java-jwt` 实现 JWT 签发与解析  
 - [ ] 实现基于角色的访问控制（RBAC）  
 
-### 4. 配置管理
+</details>
+
+<details>
+<summary><strong>4. 配置管理</strong></summary>
+
 - [ ] 使用 Spring Cloud Config 统一管理应用配置（或支持迁移到 AWS Parameter Store）  
 - [ ] 支持配置热更新（使用 Spring Cloud Bus）  
 
-### 5. 缓存与消息中间件
+</details>
+
+<details>
+<summary><strong>5. 缓存与消息中间件</strong></summary>
+
 - [ ] 集成 Redis 实现缓存与防护机制（如穿透/雪崩）  
 - [ ] 使用 Kafka 或 RabbitMQ 实现异步任务处理  
 
-### 6. 项目结构与质量优化
+</details>
+
+<details>
+<summary><strong>6. 项目结构与质量优化</strong></summary>
+
 - [ ] 采用 DTO/Entity 分层设计，使用 MapStruct 简化对象转换  
 - [ ] 使用 `@ControllerAdvice` + 自定义异常类统一错误处理  
 - [ ] 使用 Swagger 自动生成 API 文档  
 
-### 7. DevOps 实践
+</details>
+
+<details>
+<summary><strong>7. DevOps 实践</strong></summary>
+
 - [ ] 编写多阶段 Dockerfile 构建镜像  
 - [ ] 使用 GitHub Actions 实现自动化构建 / 测试 / 部署流程  
 - [ ] 输出部署说明文档和健康检查策略  
 
-### 8. 保险业务场景练习
+</details>
+
+<details>
+<summary><strong>8. 保险业务场景练习</strong></summary>
+
 - [ ] 尝试构建和实现我们可以想象到的保险业务流程，如投保、出单、理赔、状态流转等，训练对业务逻辑的建模能力  
 - [ ] 每个场景需配合对应 API 设计、数据库模型、业务规则等进行完整实现  
 
-### 9. 中间件选型实践
+</details>
+
+<details>
+<summary><strong>9. 中间件选型实践</strong></summary>
+
 - [ ] 针对 MySQL / Redis / 消息队列（如 Kafka、RabbitMQ）的使用场景进行分析与落地  
 - [ ] 比较各类中间件的优缺点，并结合实际需求做出合理选型  
 - [ ] 记录使用过程中的注意事项与配置优化经验  
+
+</details>
