@@ -216,3 +216,9 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 - [ ] 记录使用过程中的注意事项与配置优化经验  
 
 </details>
+
+## Notes:
+### Component Relationship Flow
+![img.png](img.png)
+
+
