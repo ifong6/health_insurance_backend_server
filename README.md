@@ -6,7 +6,7 @@ health_insurance_backend_server for practice (internship)
 ## 任务清单
 
 ### 1. SpringBoot基础框架搭建
-- [ ] 初始化SpringBoot项目结构  
+- [y] 初始化SpringBoot项目结构  
 - [ ] 配置基础依赖和父POM  
 
 ### 2. 单数据源配置
