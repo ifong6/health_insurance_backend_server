@@ -1,70 +1,138 @@
-# Health Insurance Backend Server (Tech Stack Aligned with U.S. Industry)  
+# Health Insurance Backend Server (Tech Stack Aligned with U.S. Industry)
 Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Docker + GitHub Actions
 
 ---
 
-## ✅ Task Checklist (Aligned with 2025 U.S. Software Engineering Practices)
+## 💡 Tech Stack Overview
 
-### 1. Spring Boot Project Initialization
+<details>
+<summary><strong>Click to expand tech stack card</strong></summary>
+
+- **Backend Framework**: Spring Boot, Spring Security
+- **Databases**: PostgreSQL, Redis, AWS RDS, DynamoDB (optional)
+- **Cloud & Storage**: AWS S3, AWS Parameter Store, AWS SQS/SNS
+- **Build & CI/CD**: Docker, GitHub Actions, Testcontainers
+- **Testing**: JUnit, Mockito
+- **API Tools**: Swagger, MapStruct
+- **Architecture**: Layered (DTO/Entity/Service), RBAC, Config Profiles
+
+</details>
+
+---
+
+## 📚 Table of Contents (English)
+- [1. Spring Boot Project Initialization](#1-spring-boot-project-initialization)
+- [2. Multi-Type Data Source Integration (AWS)](#2-multi-type-data-source-integration-with-aws-services)
+- [3. User Authentication and Authorization](#3-user-authentication-and-authorization)
+- [4. Centralized Configuration](#4-centralized-configuration)
+- [5. Caching and Messaging](#5-caching-and-messaging)
+- [6. Project Architecture and Code Quality](#6-project-architecture-and-code-quality)
+- [7. DevOps Practices](#7-devops-practices)
+- [8. Business Scenario Implementation](#8-business-scenario-implementation)
+- [9. Middleware Selection and Usage](#9-middleware-selection-and-usage)
+
+---
+
+<details>
+<summary><strong>1. Spring Boot Project Initialization</strong></summary>
+
 - [x] Initialize project using Spring Initializr  
 - [x] Set up basic dependencies like `spring-boot-starter-web`, `spring-boot-starter-data-jpa`  
 
-### 2. Multi-Type Data Source Integration (with AWS Services)
+</details>
+
+<details>
+<summary><strong>2. Multi-Type Data Source Integration (with AWS Services)</strong></summary>
+
 - [ ] Configure multiple types of data sources to support complex insurance business needs  
-  - **Relational DB**: Integrate AWS RDS (PostgreSQL / MySQL) using Spring Data JPA  
-  - **Cache DB**: Use AWS ElastiCache (Redis) for caching and cache penetration protection  
-  - **NoSQL DB**: Optionally integrate AWS DynamoDB for unstructured, high-throughput data  
-  - **Object Storage**: Integrate AWS S3 for storing policy documents, invoices, and static files  
-  - **Message Queues**: Use AWS SQS / SNS or Apache Kafka for asynchronous processing  
-- [ ] Manage environment-specific configs via `application.yml` + Spring Profiles  
-- [ ] Build a modular repository layer to support multi-source data handling  
-- [ ] Implement integration tests using JUnit, Mockito, and Testcontainers  
+  - **Relational DB**: Integrate AWS RDS (PostgreSQL / MySQL)  
+  - **Cache DB**: Use AWS ElastiCache (Redis)  
+  - **NoSQL DB**: Optionally integrate AWS DynamoDB  
+  - **Object Storage**: Integrate AWS S3  
+  - **Message Queues**: Use AWS SQS / SNS or Apache Kafka  
+- [ ] Manage configs via `application.yml` + Spring Profiles  
+- [ ] Build modular repository layer  
+- [ ] Integration tests using JUnit, Mockito, Testcontainers  
 
-### 3. User Authentication and Authorization
-- [ ] Build registration and login APIs with Spring Security  
-- [ ] Use `auth0/java-jwt` to issue and validate JWTs  
-- [ ] Implement role-based access control (RBAC)  
+</details>
 
-### 4. Centralized Configuration
-- [ ] Use Spring Cloud Config for centralized config management (or AWS Parameter Store)  
-- [ ] Support dynamic config refresh via Spring Cloud Bus  
+<details>
+<summary><strong>3. User Authentication and Authorization</strong></summary>
 
-### 5. Caching and Messaging
-- [ ] Integrate Redis for caching strategies and failover protection  
-- [ ] Use Kafka or RabbitMQ for decoupled, asynchronous business flows  
+- [ ] Build registration and login APIs  
+- [ ] Use `auth0/java-jwt` for JWT  
+- [ ] Implement RBAC  
 
-### 6. Project Architecture and Code Quality
-- [ ] Apply layered architecture with DTO/Entity separation  
-- [ ] Use MapStruct for object mapping  
-- [ ] Implement global exception handling with `@ControllerAdvice`  
-- [ ] Auto-generate API docs using Swagger  
+</details>
 
-### 7. DevOps Practices
-- [ ] Write multi-stage Dockerfile for optimized image builds  
-- [ ] Use GitHub Actions for CI/CD pipelines (build/test/deploy)  
-- [ ] Deliver deployment checklist and health check strategy  
+<details>
+<summary><strong>4. Centralized Configuration</strong></summary>
 
-### 8. Business Scenario Implementation
-- [ ] Simulate and implement real-world insurance flows such as policy purchase, issuance, claims, and state transitions  
-- [ ] Each scenario should include API design, DB modeling, business rules, and exception handling  
+- [ ] Use Spring Cloud Config (or AWS Parameter Store)  
+- [ ] Enable dynamic config refresh  
 
-### 9. Middleware Selection and Usage
-- [ ] Evaluate and integrate MySQL, Redis, Kafka/RabbitMQ based on business requirements  
-- [ ] Compare pros and cons of different middleware and justify selection  
-- [ ] Document integration issues, optimization tips, and configuration best practices  
+</details>
+
+<details>
+<summary><strong>5. Caching and Messaging</strong></summary>
+
+- [ ] Integrate Redis for caching and resilience  
+- [ ] Use Kafka or RabbitMQ for async processing  
+
+</details>
+
+<details>
+<summary><strong>6. Project Architecture and Code Quality</strong></summary>
+
+- [ ] DTO/Entity separation  
+- [ ] Use MapStruct for mapping  
+- [ ] Global error handling  
+- [ ] Swagger for API docs  
+
+</details>
+
+<details>
+<summary><strong>7. DevOps Practices</strong></summary>
+
+- [ ] Multi-stage Dockerfile  
+- [ ] GitHub Actions CI/CD  
+- [ ] Deployment checklist  
+
+</details>
+
+<details>
+<summary><strong>8. Business Scenario Implementation</strong></summary>
+
+- [ ] Simulate realistic flows like issuance, claims, etc.  
+- [ ] Include API, DB, business logic  
+
+</details>
+
+<details>
+<summary><strong>9. Middleware Selection and Usage</strong></summary>
+
+- [ ] Choose and justify MySQL/Redis/Kafka  
+- [ ] Compare pros/cons  
+- [ ] Document challenges and configs  
+
+</details>
 
 ---
 
 📘 以下为 **中文版本**，适合中文读者或技术笔记归档使用：
 
+## 📚 中文目录（Chinese Table of Contents）
+- [1. Spring Boot 项目初始化](#1-spring-boot-项目初始化)
+- [2. 多类型数据源配置（结合 AWS 服务）](#2-多类型数据源配置结合-aws-服务)
+- [3. 用户认证与授权](#3-用户认证与授权)
+- [4. 配置管理](#4-配置管理)
+- [5. 缓存与消息中间件](#5-缓存与消息中间件)
+- [6. 项目结构与质量优化](#6-项目结构与质量优化)
+- [7. DevOps 实践](#7-devops-实践)
+- [8. 保险业务场景练习](#8-保险业务场景练习)
+- [9. 中间件选型实践](#9-中间件选型实践)
+
 ---
-
-# Health Insurance Backend Server (美企技术栈实战项目)  
-实战演练：Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Docker + GitHub Actions
-
----
-
-## ✅ 实践任务清单（对齐美国软件行业主流栈）
 
 ### 1. Spring Boot 项目初始化
 - [x] 使用 Spring Initializr 初始化项目结构  
