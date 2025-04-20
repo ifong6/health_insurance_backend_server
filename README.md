@@ -146,8 +146,8 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 <summary><strong>2. 多类型数据源配置（结合 AWS 服务）</strong></summary>
 
 - [ ] 配置多种数**据庫类型**及**数据源**以支持复杂保险业务系统，包括关系型数据库、NoSQL、缓存、对象存储与消息队列  
-      - [ ] **数据库**：包括关系型数据库、NoSQL、缓存、对象存储与消息队列   
-      - [ ] **数据源**：包括本地及Remote数据源
+    - [ ] **数据库**：包括关系型数据库、NoSQL、缓存、对象存储与消息队列   
+    - [ ] **数据源**：包括本地及Remote数据源
 - [ ] 使用 `application.yml` 管理多数据源配置，配合 Spring Profile 支持多环境部署  
 - [ ] 建立模块化的 Repository 层结构，支持多源数据并发调用与统一封装  
 - [ ] 实现核心接口的集成测试，使用 JUnit + Mockito + Testcontainers 进行端到端验证  
@@ -156,6 +156,7 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 
 <details>
 <summary><strong>3. 用户认证与授权</strong></summary>
+  
 - [ ] api 响应格式统一化
 - [ ] 注册/登陆/用户信息获取 api接口实现（controller + service + entity + jpa）
 - [ ] 使用 Spring Security 实现注册 / 登录 API () 
