@@ -156,8 +156,9 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 
 <details>
 <summary><strong>3. 用户认证与授权</strong></summary>
-
-- [ ] 使用 Spring Security 实现注册 / 登录 API  
+- [ ] api 响应格式统一化
+- [ ] 注册/登陆/用户信息获取 api接口实现（controller + service + entity + jpa）
+- [ ] 使用 Spring Security 实现注册 / 登录 API () 
 - [ ] 集成 `auth0/java-jwt` 实现 JWT 签发与解析  
 - [ ] 实现基于角色的访问控制（RBAC）  
 
