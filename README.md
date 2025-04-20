@@ -145,12 +145,9 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 <details>
 <summary><strong>2. 多类型数据源配置（结合 AWS 服务）</strong></summary>
 
-- [ ] 配置多种数据源类型以支持复杂保险业务系统，包括关系型数据库、NoSQL、缓存、对象存储与消息队列  
-  - **关系型数据库**：使用 Spring Data JPA 配置 AWS RDS（PostgreSQL / MySQL）  
-  - **缓存数据库**：集成 AWS ElastiCache（Redis）进行热点数据缓存和缓存穿透防护  
-  - **NoSQL 数据库**：扩展支持 AWS DynamoDB，适用于非结构化或高吞吐场景  
-  - **对象存储**：集成 AWS S3 进行保单附件、发票等静态资源存储与访问控制  
-  - **消息队列**：集成 AWS SQS / SNS 或 Apache Kafka，实现异步化投保处理与通知系统  
+- [ ] 配置多种数**据庫类型**及**数据源**以支持复杂保险业务系统，包括关系型数据库、NoSQL、缓存、对象存储与消息队列  
+      - [ ] **数据库**：包括关系型数据库、NoSQL、缓存、对象存储与消息队列   
+      - [ ] **数据源**：包括本地及Remote数据源
 - [ ] 使用 `application.yml` 管理多数据源配置，配合 Spring Profile 支持多环境部署  
 - [ ] 建立模块化的 Repository 层结构，支持多源数据并发调用与统一封装  
 - [ ] 实现核心接口的集成测试，使用 JUnit + Mockito + Testcontainers 进行端到端验证  
