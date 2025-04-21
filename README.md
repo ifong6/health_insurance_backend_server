@@ -220,4 +220,5 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 ### Component Relationship Flow
 ![img.png](img.png)
 
+### VO vs DTO vs PO 
 ![img2.png](img2.png)
