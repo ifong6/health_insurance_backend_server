@@ -219,6 +219,4 @@ Hands-on Practice: Spring Boot + Spring Security + JPA + PostgreSQL + Redis + Do
 
 ## Notes:
 ### Component Relationship Flow
-![img.png](img.png)
-
 
