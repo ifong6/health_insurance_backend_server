@@ -13,9 +13,9 @@ import java.time.LocalDateTime;
 public class SessionCustomerVO {
     private String firstName;
     private String lastName;
-    private LocalDate DOB;
+    private String dob;
     private String email;
     private String policyNo;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    private String createdAt;
+    private String updatedAt;
 }

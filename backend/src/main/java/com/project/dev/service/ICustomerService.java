@@ -1,15 +1,24 @@
 package com.project.dev.service;
 
-import com.project.dev.entity.Customer;
+import com.project.dev.entity.po.CustomerPO;
+import com.project.dev.entity.request.UserLoginRequest;
+import com.project.dev.entity.request.UserRegisterRequest;
+import com.project.dev.entity.vo.SessionCustomerVO;
 
 import java.util.List;
 
 public interface ICustomerService {
-    Customer findById(Integer id);
+    SessionCustomerVO signUp(UserRegisterRequest request);
 
-    List<Customer> findAll();
+    boolean logIn(UserLoginRequest request);
 
-    Customer save(Customer customer);
+    CustomerPO findById(Integer id);
+
+    CustomerPO findByEmail(CustomerPO customer);
+
+    List<CustomerPO> findAll();
 
     void deleteById(Integer id);
+
+
 }
