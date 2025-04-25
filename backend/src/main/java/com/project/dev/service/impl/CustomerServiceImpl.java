@@ -4,9 +4,8 @@ import com.project.dev.entity.po.CustomerPO;
 import com.project.dev.entity.request.UserLoginRequest;
 import com.project.dev.entity.request.UserRegisterRequest;
 import com.project.dev.entity.vo.SessionCustomerVO;
-import com.project.dev.exceptions.user.EmailAlreadyExistsException;
-import com.project.dev.exceptions.user.PasswordNotValidException;
-import com.project.dev.exceptions.user.UserNotFoundException;
+import com.project.dev.exceptions.ExceptionEnum;
+import com.project.dev.exceptions.UserException;
 import com.project.dev.repository.CustomerRepository;
 import com.project.dev.service.ICustomerService;
 import org.springframework.beans.BeanUtils;
@@ -24,14 +23,14 @@ public class CustomerServiceImpl implements ICustomerService {
     private CustomerRepository customerRepository;
 
     @Override
-    public SessionCustomerVO signUp(UserRegisterRequest request){
+    public SessionCustomerVO signUp(UserRegisterRequest request) throws UserException {
         // check params
 
         // request -> CustomerPO
         CustomerPO existingCustomer = customerRepository.findByEmail(request.getEmail());
 
         if (Objects.nonNull(existingCustomer)) {
-            throw new EmailAlreadyExistsException();
+            throw new UserException(ExceptionEnum.EMAIL_ALREADY_EXIST);
         }
         // null
         CustomerPO newCustomer = new CustomerPO();
@@ -48,15 +47,15 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
    @Override
-    public boolean logIn(UserLoginRequest request) {
+   public boolean logIn(UserLoginRequest request) throws UserException{
         // request to CustomerPO
         CustomerPO existingCustomer = customerRepository.findByEmail(request.getEmail());
 
         if (existingCustomer == null){
-            throw new UserNotFoundException("Account not found for email: " + request.getEmail());
+            throw new UserException(ExceptionEnum.EMAIL_NOT_FOUND);
         } else if (!request.getPassword().equals(existingCustomer.getPassword())){
             // wrong password
-            throw new PasswordNotValidException("Invalid Password");
+            throw new UserException(ExceptionEnum.PASSWORD_NOT_VALID);
         }
 
         return true;
